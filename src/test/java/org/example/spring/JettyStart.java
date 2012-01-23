@@ -4,6 +4,8 @@ import org.eclipse.jetty.ajp.Ajp13SocketConnector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
 
+import java.util.Properties;
+
 
 /**
  * @author zutherb
@@ -15,6 +17,8 @@ public class JettyStart {
             System.out.println("JettyStart <httpport>");
             return;
         }
+
+        System.setProperty("spring.profiles.active", "development");
 
         Server server = new Server(Integer.parseInt(args[0]));
         WebAppContext context = new WebAppContext();

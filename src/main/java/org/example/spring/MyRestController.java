@@ -13,14 +13,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MyRestController {
 
     private MyService myService;
+    private MyProfileService profileService;
 
     @Autowired
-    public MyRestController(MyService myService){
+    public MyRestController(MyService myService, MyProfileService profileService){
         this.myService = myService;
+        this.profileService = profileService;
     }
     
     @RequestMapping(value = "/helloworld", method = RequestMethod.GET)
     public @ResponseBody String helloWorld(){
         return myService.getHelloWord();
+    }
+
+    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    public @ResponseBody String profile(){
+        return profileService.getProfileName();
     }
 }
