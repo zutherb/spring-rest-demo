@@ -12,8 +12,6 @@ import java.util.logging.Logger;
  */
 public class ContextProfileInitializer implements ApplicationContextInitializer<ConfigurableWebApplicationContext> {
 
-    private static final Logger LOGGER = Logger.getLogger("ContextProfileInitializer");
-
     @Override
     public void initialize(ConfigurableWebApplicationContext configurableWebApplicationContext) {
         ConfigurableEnvironment environment = configurableWebApplicationContext.getEnvironment();
