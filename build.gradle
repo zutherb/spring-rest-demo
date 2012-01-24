@@ -70,3 +70,7 @@ task makeDirs(description: 'Initialize project') << { task ->
         }
     }
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.0-milestone-7'
+}
